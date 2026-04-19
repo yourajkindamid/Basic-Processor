@@ -17,7 +17,7 @@ vector <int> IPR (1, 0);
 vector <int> CPR (1, 0);
 
 //store names of every operation very stupid idea
-vector <string> totalops = {"STA", "INP", "LDA", "ADD", "SUB", "AND", "OR_func", "NEG", "SEA", "NOT_func", "OUT_func"};
+vector <string> totalops = {"STA", "INP", "LDA", "ADD", "SUB", "AND", "OR_func", "NEG", "SEA", "NOT_func", "OUT_func", "ENCR", "DECR"};
 
 
 //MEMORY
@@ -97,6 +97,20 @@ void OUT_func()
     cout << "OUTPUT: " << OPR[0] << endl;
 }
 
+//remember that A is mapped to 0 and so on and so forth till like Z which is mapped to 25
+void ENCR(int x)
+{
+    int key = x % 10;           //this has to be the stupidest thing i ever came up with
+    int text = (x - key)/10;        // can work with a key shift of upto 9
+    ACCM[0] = (text + key) % 26;
+}
+void DECR(int x)
+{
+    int key = x % 10;           //works on basically the same constraints for decryption asw
+    int text = (x - key)/10;        
+    ACCM[0] = (text + (26-key))%26;
+}
+
 
 // after a successful run of the program and the user wants to restart the program, everything will be cleared to 0 ^_^
 void ultra_CLR()
@@ -173,6 +187,14 @@ void checkwhichop(string x, int y)
 
         case 10:
         OUT_func();
+        break;
+
+        case 11:
+        ENCR(y);
+        break;
+
+        case 12:
+        DECR(y);
         break;
 
     }
