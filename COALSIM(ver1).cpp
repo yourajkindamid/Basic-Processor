@@ -17,7 +17,7 @@ vector <int> IPR (1, 0);
 vector <int> CPR (1, 0);
 
 //store names of every operation very stupid idea
-vector <string> totalops = {"STA", "INP", "LDA"};
+vector <string> totalops = {"STA", "INP", "LDA", "ADD", "SUB", "AND", "OR_func", "NEG", "SEA", "NOT_func", "OUT_func"};
 
 
 //MEMORY
@@ -53,6 +53,50 @@ void LDA(int x)
 {
     ACCM[0] = stoi(RAM[x]);
 }
+
+void ADD(int x)
+{
+    ACCM[0] += stoi(RAM[x]);
+}
+
+void SUB(int x)
+{
+    ACCM[0] -= stoi(RAM[x]);
+}
+
+void AND(int x)
+{
+    ACCM[0] = ACCM[0] & stoi(RAM[x]);
+}
+
+void OR_func(int x)
+{
+    ACCM[0] = ACCM[0] | stoi(RAM[x]);
+}
+
+void NEG(int x)
+{
+    ACCM[0] = -ACCM[0];
+}
+
+void SEA(int x)
+{
+    ACCM[0]=x; 
+}
+void NOT_func()
+{
+    ACCM[0] = ~ACCM[0]; 
+}
+void CLA()
+{
+    ACCM[0] = 0; 
+}
+void OUT_func()
+{
+    OPR[0] = ACCM[0];
+    cout << "OUTPUT: " << OPR[0] << endl;
+}
+
 
 // after a successful run of the program and the user wants to restart the program, everything will be cleared to 0 ^_^
 void ultra_CLR()
@@ -92,12 +136,45 @@ void checkwhichop(string x, int y)
         break;
 
         case 1:
-        INP(y);
+        INP(y);             
         break;
 
         case 2:
         LDA(y);
         break;
+
+        case 3:
+        ADD(y);
+        break;
+
+        case 4: 
+        SUB(y); 
+        break;
+
+        case 5:
+        AND(y);
+        break;
+
+        case 6:
+        OR_func(y);
+        break;
+        
+        case 7:
+        NEG(y);
+        break;
+
+        case 8:
+        SEA(y);
+        break;
+
+        case 9:
+        NOT_func();
+        break;
+
+        case 10:
+        OUT_func();
+        break;
+
     }
 
 }
