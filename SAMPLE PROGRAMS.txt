@@ -1,0 +1,75 @@
+-> Please enter these instructions one by one, entering the operation first then entering the address/input separately
+
+-> It is best t access the execution file generated outside the IDE in the folder of the program. The IDE terminal may not provide the best interface for the program to work properly.
+
+-> SUBTRACTING 2 NUMBERS (33-27) AND STORED IN DIFFERENT MEMORY LOCATION:
+INP
+27
+STA
+8
+SEA
+33
+SUB
+8
+STA
+6
+END
+
+ENCRYPTING A LETTER USING CAESAR CIPHER:
+note: Each alphabet is mapped to numbers from 0 to 25 i.e A:0, B:1, ... Z:25
+note_2: The last digit of any value 3 digit/2 digit value entered will be considered the key
+
+note_3 (for reader reference):
+0-A 1-B 2-C 3-D 4-E 5-F 6-G 7-H 8-I 9-J 10-K
+11-L 12-M 13-N 14-O 15-P 16-Q 17-R 18-S 19-T 20-U 
+21-V 22-W 23-X 24-Y 25-Z
+
+-> ENCRYPTING AND STORING "COAL" with a shift of 3
+ENCR
+23
+STA
+9
+ENCR
+143
+STA
+10
+ENCR
+03
+STA
+11
+ENCR
+113
+STA
+12
+END
+
+
+note_3 (for reader reference):
+0-A 1-B 2-C 3-D 4-E 5-F 6-G 7-H 8-I 9-J 10-K
+11-L 12-M 13-N 14-O 15-P 16-Q 17-R 18-S 19-T 20-U 
+21-V 22-W 23-X 24-Y 25-Z
+-> DECRYPTING AND STORING "FRDO" with a shift of 3
+DECR
+53
+STA
+9
+DECR
+173
+STA
+10
+DECR
+33
+STA
+11
+DECR
+143
+STA
+12
+END
+
+
+
+
+
+
+
